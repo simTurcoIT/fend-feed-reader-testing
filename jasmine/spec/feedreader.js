@@ -13,7 +13,7 @@ $(function() {
     * a related set of tests. This suite is all about the RSS
     * feeds definitions, the allFeeds variable in our application.
     */
-    describe('RSS Feeds', function() {
+    describe('RSS Feeds', () => {
         /* This is our first test - it tests to make sure that the
          * allFeeds variable has been defined and that it is not
          * empty. Experiment with this before you get started on
@@ -21,32 +21,45 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
-        it('are defined', function() {
+        it('are defined', () => {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
 
+         //Test to verify that every url feed is defined 
+         //and not empty
 
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a URL defined
-         * and that the URL is not empty.
-         */
+         it('every url feed is defined and not empty', () => {
+            allFeeds.forEach((Feed) => {
+                expect(Feed.url).toBeDefined();
+                expect(Feed.url.length).not.toBe(0);
+            });
+         });
+        
+         //Test to verify that every feed has a defined 
+         //and not empty name
+        
 
+         it('every feed has a defined name', () => {
+            allFeeds.forEach((Feed) => {
+                expect(Feed.name).toBeDefined();
+                expect(Feed.name.length).not.toBe(0);
+            });
+         });
 
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a name defined
-         * and that the name is not empty.
-         */
     });
 
+    /* New test suite named "The menu" */
 
-    /* TODO: Write a new test suite named "The menu" */
-
+    describe('The menu', () => {
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+
+    })
+
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
