@@ -39,7 +39,6 @@ $(function() {
          //Test to verify that every feed has a defined 
          //and not empty name
         
-
          it('every feed has a defined name', () => {
             allFeeds.forEach((Feed) => {
                 expect(Feed.name).toBeDefined();
@@ -52,20 +51,32 @@ $(function() {
     /* New test suite named "The menu" */
 
     describe('The menu', () => {
-        /* TODO: Write a test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
-         * the CSS to determine how we're performing the
-         * hiding/showing of the menu element.
-         */
+ 
+        //Test to verify that menu element is hidden
+        //by default
 
-    })
+        it('is hidden by default', () => {
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
 
-
-         /* TODO: Write a test that ensures the menu changes
-          * visibility when the menu icon is clicked. This test
-          * should have two expectations: does the menu display when
-          * clicked and does it hide when clicked again.
+         /* Test to verify that menu element changes visibility
+          * when clicked; it should has two expectations: menu
+          * displays if clicked, and hides if clicked again.
           */
+
+        it('changes visibility when clicked', () => {
+            //we made sure that menu is hidden by default
+            $('.menu-icon-link').click(); 
+            expect($('body').hasClass('menu-hidden')).toBe(false);
+            //if clicked again
+            $('.menu-icon-link').click(); 
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
+        
+    });
+
+
+
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
