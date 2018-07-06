@@ -27,7 +27,7 @@ $(function() {
          //and not empty
 
          it('every url feed is defined and not empty', () => {
-            allFeeds.forEach((Feed) => {
+            allFeeds.forEach(Feed => {
                 expect(Feed.url).toBeDefined();
                 expect(Feed.url.length).not.toBe(0);
             });
@@ -37,7 +37,7 @@ $(function() {
          //and not empty name
         
          it('every feed has a defined name', () => {
-            allFeeds.forEach((Feed) => {
+            allFeeds.forEach(Feed => {
                 expect(Feed.name).toBeDefined();
                 expect(Feed.name.length).not.toBe(0);
             });
@@ -84,7 +84,7 @@ $(function() {
          * container.
          */
 
-        beforeEach((done) => {
+        beforeEach(done => {
             loadFeed(0, done);
         });
 
@@ -106,12 +106,12 @@ $(function() {
         var firstFeed;
         var secondFeed;
 
-        beforeEach((done) => {
+        beforeEach(done => {
             loadFeed(0, () => {
                 firstFeed = $('.feed').html();
 
-                loadFeed(1, () => {
-                    secondFeed = $('.feed').html();
+            loadFeed(1, () => {
+                secondFeed = $('.feed').html();
                 done();
                 });
             });
