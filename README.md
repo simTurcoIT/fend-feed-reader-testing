@@ -9,8 +9,4 @@ Clone or download this repository and run `index.html` in your browser.
 
 # Test results
 
-Jasmine test results will be loaded at the bottom of the page.
-
-## Test suites and specs
-
-
+Jasmine test results will be loaded after the content at the bottom of the page; there are four test suites and seven specs.
